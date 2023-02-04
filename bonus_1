@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int birthday = 5;
+int identifier_first = 4;
+int identifier_last = 1;
+
+
+int main() {
+int map[10][10] = {};
+map[(rand() % 9)][(rand() % 9)] = 1;
+map[birthday][identifier_last] = 2;
+map[10-birthday][identifier_first] = 3;
+
+    for(int i = 9; i >= 0;i--)
+    {
+        for(int j = 0 ; j < 10 ; j++){ 
+                cout << map[j][i];
+        }
+        
+        cout << '\n';
+    }
+
+cout << "Taxicrab distance = " << abs((10-birthday)-birthday)+abs(identifier_last-identifier_first) << endl;
+cout <<"Euclidean distance = " << sqrt(pow(birthday - (10-birthday),2) + pow(identifier_last - identifier_first,2)) << endl;
+cout <<"Chebychev distance = " << max(abs(birthday - (10-birthday)),abs(identifier_last - identifier_first));
+
+
+}
